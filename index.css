@@ -1,0 +1,154 @@
+html, body {
+  height: 100%;
+}
+
+.Grid {
+  display: flex;
+}
+
+.Grid-cell {
+  flex: 1;
+}
+
+/* With gutters */
+.Grid--gutters {
+  margin-left: -1em;
+}
+.Grid--gutters > .Grid-cell {
+  padding-left: 1em;
+}
+
+/* Alignment per row */
+.Grid--top {
+  align-items: flex-start;
+}
+.Grid--bottom {
+  align-items: flex-end;
+}
+.Grid--center {
+  align-items: center;
+}
+
+/* Alignment per cell */
+.Grid-cell--top {
+  align-self: flex-start;
+}
+.Grid-cell--bottom {
+  align-self: flex-end;
+}
+.Grid-cell--center {
+  align-self: center;
+}
+
+/* Base classes for all media */
+.Grid--fit > .Grid-cell {
+  flex: 1;
+}
+.Grid--full > .Grid-cell {
+  flex: 0 0 100%;
+}
+.Grid--1of2 > .Grid-cell {
+  flex: 0 0 50%
+}
+.Grid--1of3 > .Grid-cell {
+  flex: 0 0 33.3333%
+}
+.Grid--1of4 > .Grid-cell {
+  flex: 0 0 25%
+}
+
+/* Small to medium screens */
+@media (min-width: 24em) {
+  .small-Grid--fit > .Grid-cell {
+    flex: 1;
+  }
+  .small-Grid--full > .Grid-cell {
+    flex: 0 0 100%;
+  }
+  .small-Grid--1of2 > .Grid-cell {
+    flex: 0 0 50%
+  }
+  .small-Grid--1of3 > .Grid-cell {
+    flex: 0 0 33.3333%
+  }
+  .small-Grid--1of4 > .Grid-cell {
+    flex: 0 0 25%
+  }
+}
+
+/* Large screens */
+@media (min-width: 48em) {
+  .large-Grid--fit > .Grid-cell {
+    flex: 1;
+  }
+  .large-Grid--full > .Grid-cell {
+    flex: 0 0 100%;
+  }
+  .large-Grid--1of2 > .Grid-cell {
+    flex: 0 0 50%
+  }
+  .large-Grid--1of3 > .Grid-cell {
+    flex: 0 0 33.3333%
+  }
+  .large-Grid--1of4 > .Grid-cell {
+    flex: 0 0 25%
+  }
+}
+
+.cutback {
+  margin: 0;
+  padding: 0;
+  background-color: #ececec;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #1E1E1E;
+  color: #ffffff;
+  height: 30px;
+}
+
+.tabs {
+  background-color: #424242;
+  height: 30px;
+}
+
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  height: 20px;
+}
+
+.cutback-body {
+  display: flex;
+  flex-direction: column;
+  flex:1;
+}
+
+.cutback-nav {
+  order: -1;
+  background-color: #262626;
+}
+
+.cutback-ads {
+  background-color: #393939;
+}
+
+.cutback-content {
+  background-color: #2D2D2D;
+}
+
+@media (min-width: 20px) {
+  .cutback-body {
+    flex-direction: row;
+    flex: 1;
+  }
+  .cutback-content {
+    flex: 1;
+  }
+  .cutback-nav, .cutback-ads {
+    /* 12em is the width of the columns */
+    flex: 0 0 12em;
+  }
+}
